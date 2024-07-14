@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
   <head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+
+
+
     <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,6 +49,17 @@
 
   <body>
     <header>
+
+
+    {{ with .Params.headerimage }}
+      <img width="720" src="{{ . | relURL }}" alt="Header Image">
+    {{ else }}
+      <img width="720" src="{{ "plates/default.webp" | relURL }}" alt="Default Header Image">
+    {{ end }}
+
+
+
+
       {{ partial "header.html" . }}
     </header>
     <main>
